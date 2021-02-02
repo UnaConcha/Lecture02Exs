@@ -10,8 +10,10 @@ def get_data(url: str):#entry pt to program
    if response.status_code != 200:
        print(response.tect)
        return[]
-   print("Good Data")
-
+   json_data = response.json()
+   page_data = json_data["results"]
+   final_data.extend(page_data)
+   #print("Good Data")
    return final_data
 
    #pass is for when i know something goes there but its not there yet. pass lets it pass without an eror
@@ -20,6 +22,8 @@ def get_data(url: str):#entry pt to program
 def main():
     url = #grab off github after class
     all_data = get_data(url)
+    for school_data in all_data:
+        print(school_data)
     print(all_data)
 
 if __name__ == '__main__':
