@@ -3,7 +3,7 @@ import secrets
 
 def get_data(url: str):#entry pt to program
    final_data = []
-   final_url = f"{url}&api_key={secrets.apikey} "
+   final_url = f"{url}&api_key={secrets.apikey}&page=8 "
    response = requests.get(url)
 
    #number of possible response good-200, 500-error on server side, 400-error that I did something wrong from client request side
